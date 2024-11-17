@@ -8,7 +8,8 @@ const fetchData = async () => {
       process.env.NODE_ENV === "production"
         ? process.env.PROD_HOST
         : "http://localhost:3000"
-    }/api/whatsapp-template`
+    }/api/whatsapp-template`,
+    { cache: "no-store" }
   );
   const data: Template[] = await res.json();
 

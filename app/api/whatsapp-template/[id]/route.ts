@@ -4,6 +4,8 @@ import { revalidatePath } from "next/cache";
 import { connectToDb } from "@/lib/db";
 import Template from "@/models/templateModel";
 
+export const dynamic = "force-dynamic";
+
 /**
  * Handles GET requests to retrieve a specific WhatsApp template by ID.
  *
