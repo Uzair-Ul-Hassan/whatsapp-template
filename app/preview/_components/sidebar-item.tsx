@@ -16,7 +16,7 @@ interface SidebarItemProps {
 }
 
 export const SidebarItem = ({ item }: SidebarItemProps) => {
-  const { toggleSidebar } = useSidebar();
+  const { toggleSidebar, isMobile } = useSidebar();
   const pathname = usePathname();
   const url = `/preview/${item._id}`;
   const isActive = pathname === url;
@@ -25,7 +25,7 @@ export const SidebarItem = ({ item }: SidebarItemProps) => {
     <SidebarMenuItem>
       <SidebarMenuButton
         asChild
-        onClick={toggleSidebar}
+        onClick={() => isMobile && toggleSidebar()}
         className={cn(
           "text-muted-foreground",
           isActive && "text-black bg-gray-200 hover:bg-gray-200"

@@ -40,7 +40,7 @@ interface TemplateCardProps {
 const TemplateCard = ({ template }: TemplateCardProps) => {
   const Icon = iconMap[template.category];
   const color = categoryColors[template.category];
-  const lastModified = new Date(template.updatedAt).toLocaleDateString();
+  const lastModified = new Date(template.updatedAt).toDateString();
 
   return (
     <Card className="hover:scale-[1.09] transition-all ease-out duration-300 hover:shadow-md rounded-md overflow-hidden">
