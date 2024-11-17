@@ -10,9 +10,8 @@ import { SidebarItem } from "./sidebar-item";
 import { Template } from "@/types";
 
 export const AppSidebar = async () => {
-  // const res = await fetch(`http://localhost:3000/api/whatsapp-template`);
-  // const templates: Template[] = await res.json();
-  const templates: Template[] = [];
+  const res = await fetch(`${process.env.PROD_HOST}/api/whatsapp-template`);
+  const templates: Template[] = await res.json();
 
   return (
     <Sidebar className="pt-16">

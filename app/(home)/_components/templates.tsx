@@ -3,9 +3,8 @@ import { Template } from "@/types";
 import TemplateCard from "./template-card";
 
 const fetchData = async () => {
-  // const res = await fetch(`http://localhost:3000/api/whatsapp-template`);
-  // const data: Template[] = await res.json();
-  const data: Template[] = [];
+  const res = await fetch(`${process.env.PROD_HOST}/api/whatsapp-template`);
+  const data: Template[] = await res.json();
 
   return data;
 };
