@@ -9,7 +9,11 @@ interface PreviewTemplatePageProps {
 
 const fetchTemplate = async (templateId: string) => {
   const res = await fetch(
-    `${process.env.PROD_HOST}/api/whatsapp-template/${templateId}`
+    `${
+      process.env.NODE_ENV === "production"
+        ? process.env.PROD_HOST
+        : "http://localhost:3000"
+    }/api/whatsapp-template/${templateId}  `
   );
   const template: Template = await res.json();
 
