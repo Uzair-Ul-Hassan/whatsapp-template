@@ -16,7 +16,6 @@ This project provides an API for managing WhatsApp message templates. Built with
 1. [Tech Stack](#tech-stack)
 2. [Getting Started](#getting-started)
 3. [API Documentation](#api-documentation)
-4. [License](#license)
 
 ---
 
@@ -25,7 +24,7 @@ This project provides an API for managing WhatsApp message templates. Built with
 - **Framework**: [Next.js](https://nextjs.org/)
 - **Database**: MongoDB with Mongoose
 - **Validation**: Zod
-- **Deployment**: Vercel (or other serverless platforms)
+- **Deployment**: Vercel
 
 ---
 
@@ -44,8 +43,8 @@ Ensure you have the following installed:
 1. **Clone the Repository**:
 
    ```bash
-   git clone <repository_url>
-   cd <repository_name>
+   git clone https://github.com/Uzair-Ul-Hassan/whatsapp-template.git
+   cd whatsapp-template
    ```
 
 2. **Install dependencies**:
@@ -59,7 +58,7 @@ Ensure you have the following installed:
    Create .env file in the root directory and add the following
 
    ```bash
-   DATABASE_URL==mongodb+srv://<username>:<password>@<cluster-url>/<dbname>
+   DATABASE_URL==mongodb+srv://<username>:<password>@<cluster-url>
    ```
 
 4. **Run the development server**
