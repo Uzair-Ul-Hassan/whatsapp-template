@@ -8,9 +8,7 @@ interface PreviewTemplatePageProps {
   };
 }
 
-export default async function PreviewTemplatePage({
-  params: { templateId },
-}: PreviewTemplatePageProps) {
+const fetchTemplate = async (templateId: string) => {
   const res = await fetch(
     `${
       process.env.NODE_ENV === "production"
@@ -19,6 +17,13 @@ export default async function PreviewTemplatePage({
     }/api/whatsapp-template/${templateId}`
   );
   const template: Template = await res.json();
+  return template;
+};
+
+export default async function PreviewTemplatePage({
+  params: { templateId },
+}: PreviewTemplatePageProps) {
+  const template = await fetchTemplate(templateId);
 
   return <PreviewContainer template={template} />;
 }
